@@ -21,3 +21,4 @@ public class TaskCreateDto : IValidatableObject
             yield return new ValidationResult("Title must contain at least 3 non-space characters.", new[] { nameof(Title) });
     }
 }
+
