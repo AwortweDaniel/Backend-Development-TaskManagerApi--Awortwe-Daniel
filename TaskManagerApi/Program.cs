@@ -30,8 +30,6 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Ensure the database exists and has sample data, so the endpoints are
-// testable immediately after cloning the project.
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
@@ -46,7 +44,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(options =>
     {
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "Task Manager API v1");
-        options.RoutePrefix = string.Empty; // Swagger UI at the app root
+        options.RoutePrefix = string.Empty; 
     });
 }
 
