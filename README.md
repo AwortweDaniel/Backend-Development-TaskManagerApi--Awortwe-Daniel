@@ -1,4 +1,4 @@
-# Task Manager API (C# .NET)
+# Backend development - Task Manager API (C# .NET) - Awortwe Daniel
 
 A simple REST API for managing tasks, built with **ASP.NET Core Web API** and **Entity Framework Core**, for the NSS Developer Technical Assignment (Backend Development track).
 
@@ -48,8 +48,8 @@ Example request body for `POST`/`PUT`:
 
 ```json
 {
-  "title": "Write documentation",
-  "description": "Add setup instructions to the README",
+  "title": "Business start",
+  "description": "coding and debuging",
   "status": "Pending"
 }
 ```
@@ -87,17 +87,13 @@ dotnet --version
    dotnet run --project TaskManagerApi
    ```
 
-4. Open **http://localhost:5080** in a browser — Swagger UI loads at the root and lets you try every endpoint directly. You can also import the routes into Postman using that same base URL.
+4. Open **http://localhost:5080** in a browser or use postman to test the APIs.
+
 
 On first run, EF Core creates `tasks.db` in the project folder and seeds it with three sample tasks, so `GET /api/tasks` returns data immediately.
 
-## Notes
 
-- No separate React or Flutter apps are included here, per the assignment ("the backend developer does not need to build the React or Flutter applications").
-- To reset the sample data, stop the app and delete `TaskManagerApi/tasks.db`, then run again.
-- Swagger UI is only enabled in the Development environment (the default when running `dotnet run` locally).
-
-## Run in Visual Studio 2026 (Windows)
+## Run in Visual Studio 
 
 1. In **Visual Studio Installer**, choose **Modify** and install **ASP.NET and web development**. Ensure the **.NET 8 SDK/targeting pack** is installed; this project targets `net8.0`. Visual Studio 2026 alone does not install every optional SDK.
 2. Extract the ZIP, then open `TaskManagerApi.sln` using **File > Open > Project/Solution**. Trust the solution if prompted.
@@ -107,7 +103,7 @@ On first run, EF Core creates `tasks.db` in the project folder and seeds it with
 
 If Visual Studio reports a missing .NET 8 SDK, install it through Visual Studio Installer or the official .NET 8 SDK download, then reopen Visual Studio. No external SQLite server is required.
 
-## Quick API checks in Swagger
+## Quick API checks in Postman
 
 1. `GET /api/tasks` → **200**, initially three sample tasks.
 2. `GET /api/tasks/999999` → **404**.
@@ -119,6 +115,4 @@ If Visual Studio reports a missing .NET 8 SDK, install it through Visual Studio 
 
 Replace `{id}` with the actual number, without braces. These are manual acceptance checks; this repository currently has no automated test project.
 
-## Submission
 
-Create a **public GitHub repository**, commit the extracted project with meaningful commit messages, and send the repository URL (not the ZIP) to `info@innorik.com` by **23 September 2026**. Include your full name and the Backend Development position/track in the email. Never commit generated `tasks.db`, `bin/`, or `obj/` files.
