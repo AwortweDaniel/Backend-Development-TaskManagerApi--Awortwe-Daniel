@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TaskManagerApi.Data;
 using TaskManagerApi.Dtos;
-
 using TaskManagerApi.Models;
 
 namespace TaskManagerApi.Controllers;
@@ -31,7 +30,7 @@ public class TasksController : ControllerBase
         return Ok(tasks);
     }
 
-    /// <summary>Returns a single task by id.</summary>
+    
     [HttpGet("{id:int}")]
     [ProducesResponseType(typeof(TaskResponseDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -47,7 +46,7 @@ public class TasksController : ControllerBase
         return Ok(TaskResponseDto.FromEntity(task));
     }
 
-    /// <summary>Creates a new task.</summary>
+  
     [HttpPost]
     [ProducesResponseType(typeof(TaskResponseDto), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -73,7 +72,6 @@ public class TasksController : ControllerBase
         return CreatedAtAction(nameof(GetTask), new { id = task.Id }, response);
     }
 
-    /// <summary>Replaces an existing task's title, description and status.</summary>
     [HttpPut("{id:int}")]
     [ProducesResponseType(typeof(TaskResponseDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -101,7 +99,6 @@ public class TasksController : ControllerBase
         return Ok(TaskResponseDto.FromEntity(task));
     }
 
-    /// <summary>Deletes a task.</summary>
     [HttpDelete("{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
