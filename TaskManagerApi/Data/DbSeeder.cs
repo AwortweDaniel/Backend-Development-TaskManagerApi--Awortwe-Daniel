@@ -1,6 +1,5 @@
 using TaskManagerApi.Models;
 
-
 namespace TaskManagerApi.Data;
 
 public static class DbSeeder
