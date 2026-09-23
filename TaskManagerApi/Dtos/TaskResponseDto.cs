@@ -1,5 +1,4 @@
 using TaskManagerApi.Models;
-
 namespace TaskManagerApi.Dtos;
 
 public class TaskResponseDto
